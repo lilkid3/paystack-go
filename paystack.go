@@ -27,7 +27,7 @@ const (
 
 	// User agent used when communicating with the Paystack API.
 	// userAgent = "paystack-go/" + version
-	userAgent = "Mozilla/5.0 (Unknown; Linux) AppleWebKit/538.1 (KHTML, like Gecko) Chrome/v1.0.0 Safari/538.1"
+	//userAgent = "Mozilla/5.0 (Unknown; Linux) AppleWebKit/538.1 (KHTML, like Gecko) Chrome/v1.0.0 Safari/538.1"
 )
 
 type service struct {
@@ -153,7 +153,7 @@ func (c *Client) Call(method, path string, body, v interface{}) error {
 		req.Header.Set("Content-Type", "application/json")
 	}
 	req.Header.Set("Authorization", "Bearer "+c.key)
-	req.Header.Set("User-Agent", userAgent)
+	//req.Header.Set("User-Agent", userAgent)
 
 	if c.LoggingEnabled {
 		c.Log.Printf("Requesting %v %v%v\n", req.Method, req.URL.Host, req.URL.Path)
